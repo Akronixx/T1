@@ -26,7 +26,7 @@ Haga una prueba con estos datos:
  Ventas: 1800*/
             string nombre;
             int bruto, años, venta;
-            double extra;
+            double extra=0,suDes,comi=0,sueldototal;
             Console.WriteLine("[=========================MI EMPRESA S.A=========================]");
             Console.Write("Ingresé el nombre del trabajador: ");
             nombre = Console.ReadLine();
@@ -34,15 +34,40 @@ Haga una prueba con estos datos:
             bruto = int.Parse(Console.ReadLine());
             Console.Write("Ingresé la venta del trabajador: ");
             venta = int.Parse(Console.ReadLine());
-            if (venta<=600) {
-                extra=venta * 0.05;
+            if (venta <= 600) {
+                extra = venta * 0.05;
+                
             }
             if (venta <= 3000)
             {
                 extra = venta * 0.07;
+                
             }
-            Console.Write("Ingresé la cantodad de años del trabajador: ");
+            if (venta > 3000)
+            {
+                extra = (venta * 0.06) + 300;
+                
+            }
+            suDes = bruto + extra;
+            Console.WriteLine(suDes);
+            Console.Write("Ingresé la cantidad de años del trabajador: ");
             años = int.Parse(Console.ReadLine());
+            if (años <= 3)
+            {
+                comi = suDes * 0.067;
+                
+            }
+            if (años > 3)
+            {
+                comi = suDes * 0.045;
+                
+            }
+            sueldototal = suDes - comi;
+            Console.WriteLine("El nombre del trabajador es : " + nombre);
+            Console.WriteLine("El total ganado será de: " + suDes);
+            Console.WriteLine("El descuento será de: " + comi);
+            Console.WriteLine("El salario neto será de: "+sueldototal);
+
             Console.ReadKey();
         }
     }

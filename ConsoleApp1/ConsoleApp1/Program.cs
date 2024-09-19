@@ -26,6 +26,7 @@ Haga una prueba con estos datos:
  Ventas: 1800*/
             string nombre;
             int bruto, años, venta;
+            double extra;
             Console.WriteLine("[=========================MI EMPRESA S.A=========================]");
             Console.Write("Ingresé el nombre del trabajador: ");
             nombre = Console.ReadLine();
@@ -34,6 +35,11 @@ Haga una prueba con estos datos:
             Console.Write("Ingresé la venta del trabajador: ");
             venta = int.Parse(Console.ReadLine());
             if (venta<=600) {
+                extra=venta * 0.05;
+            }
+            if (venta <= 3000)
+            {
+                extra = venta * 0.07;
             }
             Console.Write("Ingresé la cantodad de años del trabajador: ");
             años = int.Parse(Console.ReadLine());

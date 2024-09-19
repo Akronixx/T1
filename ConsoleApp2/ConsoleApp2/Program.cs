@@ -24,18 +24,26 @@ Hará una prueba con estos datos: 2, 3, 4, 6, 9, F*/
             string n;
             double placa;
             Console.WriteLine("[=============================CONTROL DE TRAFICO=============================]");
-            Console.WriteLine("Desea saber la calcomanía del vehículo: ");
+            Console.WriteLine("Desea saber la calcomanía del vehículo(Si(S)/Fin(F)): ");
             n= Console.ReadLine().ToUpper();
             while (n!="S" && n!="F")
             {
                 Console.Write("Errooooooor ingresé una opción valida!!!!!!");
-                Console.WriteLine("Desea saber la calcomanía del vehículo: ");
+                Console.WriteLine("Desea saber la calcomanía del vehículo(Si(S)/Fin(F)): ");
                 n = Console.ReadLine().ToUpper();
             }
             while (n == "S")
             {
-                Console.Write("Ingresé el ultimo digito de la placa del vehiculo: ");
+                Console.Write("Ingresé el ultimo digito de la placa del vehiculo(Si(S)/Fin(F)): ");
                 placa = int.Parse(Console.ReadLine());
+                Console.WriteLine("Desea saber la calcomanía del vehículo: ");
+                n = Console.ReadLine().ToUpper();
+                while (n != "S" && n != "F")
+                {
+                    Console.Write("Errooooooor ingresé una opción valida!!!!!!");
+                    Console.WriteLine("Desea saber la calcomanía del vehículo(Si(S)/Fin(F)): ");
+                    n = Console.ReadLine().ToUpper();
+                }
             }
         }
     }
